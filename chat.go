@@ -2,6 +2,7 @@ package openai
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"net/http"
 )
@@ -37,7 +38,7 @@ type ChatCompletionMessage struct {
 type FunctionCall struct {
 	Name string `json:"name,omitempty"`
 	// call function with arguments in JSON format
-	Arguments string `json:"arguments,omitempty"`
+	Arguments json.RawMessage `json:"arguments,omitempty"`
 }
 
 // ChatCompletionRequest represents a request structure for chat completion API.

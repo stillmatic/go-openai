@@ -180,7 +180,7 @@ func handleChatCompletionEndpoint(w http.ResponseWriter, r *http.Request) {
 					// this is valid json so it should be fine
 					FunctionCall: &FunctionCall{
 						Name:      completionReq.Functions[0].Name,
-						Arguments: string(fcb),
+						Arguments: fcb,
 					},
 				},
 				Index: i,
